@@ -1,0 +1,44 @@
+{
+  "name": "simple-blog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "firebase": "^5.5.3",
+    "highlight.js": "^9.13.1",
+    "marked": "^0.5.1",
+    "moment": "^2.22.2",
+    "node-sass": "^4.9.4",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-firebaseui": "^3.1.2",
+    "react-loader-spinner": "^2.2.0",
+    "react-markdown": "^4.0.3",
+    "react-progressive-image": "^0.6.0",
+    "react-redux": "^5.0.7",
+    "react-redux-firebase": "^2.1.8",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.3",
+    "react-spinner": "^0.2.7",
+    "redux": "^4.0.0",
+    "redux-firestore": "^0.5.8",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:4000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
