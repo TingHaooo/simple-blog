@@ -1,0 +1,73 @@
+// animation
+@import './scss/color';
+
+.animation-draw {
+  &:hover {
+    transition: color 0.25s;
+    color: black;
+  }
+  &:before,
+  &:after{
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    width: 0%;
+    height: 0%;
+  }
+  &:before {
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    right: 0;
+    bottom: 0;
+  }
+  &:hover:before,
+  &:hover:after{
+    width: 100%;
+    height: 100%;
+  }
+  &:hover:before{
+    border-top-color: black;
+    border-right-color: black;
+    transition:
+      border-right-color 0s ease-in-out 0.25s,
+      width 0.25s ease-in-out 0s,
+      height 0.25s ease-in-out 0.25s;
+  }
+  &:hover:after{
+    border-left-color: black;
+    border-bottom-color: black;
+    transition:
+      border-bottom-color 0s ease-in-out 0.5s,
+      border-left-color 0s ease-in-out 0.75s,
+      width 0.25s ease-in-out 0.5s,
+      height 0.25s ease-in-out 0.75s;
+  }
+}
+
+.animation-meet {
+  &:before {
+    top: 0;
+    left: 0;
+  }
+  &:after {
+    top: 0;
+    left: 0;
+  }
+  &:hover:before{
+    border-top-color: black;
+    border-right-color: black;
+    transition:
+      border-right-color 0s ease-in-out 0.3s,
+      width 0.3s ease-in-out 0s,
+      height 0.3s ease-in-out 0.3s;
+  }
+  &:hover:after{
+    border-left-color: black;
+    border-bottom-color: black;
+    transition:
+      border-bottom-color 0s ease-in-out 0.3s,
+      width 0.3s ease-in-out 0.3s,
+      height 0.3s ease-in-out 0s;
+  }
+}

@@ -1,0 +1,16 @@
+//article
+export const CREATE_ARTICLE = 'CREATE_ARTICLE';
+export const CREATE_ARTICLE_ERROR = 'CREATE_ARTICLE_ERROR';
+//comment
+export const CREATE_COMMENT = 'CREATE_COMMENT';
+export const CREATE_COMMENT_ERROR = 'CREATE_COMMENT_ERROR';
+export const REPLY_COMMENT = 'REPLY_COMMENT';
+export const REPLY_COMMENT_ERROR = 'REPLY_COMMENT_ERROR';
+export const FETCH_COMMENT = 'FETCH_COMMENT';
+export const FETCH_COMMENT_ERROR = 'FETCH_COMMENT_ERROR';
+//auth
+export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
+export const SIGN_IN_ERROR = 'SIGN_IN_ERROR';
+export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
+export const SIGN_UP_ERROR = 'SIGN_UP_ERROR';
+export const LOG_OUT = 'LOG_OUT';
