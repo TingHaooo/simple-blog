@@ -10,11 +10,11 @@ import Loader from 'react-loader-spinner'
 
 class HomePage extends Component {
 
-  divideToPages = (articles) => {
+  divideToPages = (articles, n) => {
     var articlePages = [];
     if (articles) {
-      for (let i = 0; i < articles.length; i += 3) {
-        articlePages.push(articles.slice(i, i + 3))
+      for (let i = 0; i < articles.length; i += n) {
+        articlePages.push(articles.slice(i, i + n))
       }
     }
     return articlePages
@@ -22,13 +22,13 @@ class HomePage extends Component {
 
   render() {
     const { notifications, articles} = this.props;
-    const articlePages = articles && this.divideToPages(articles).length;
+    const articlePages = articles && this.divideToPages(articles, 3).length;
     // get params
     const matchPage = parseInt(this.props.match.params.page);
     // route "/" rener page 1
     const currentPage = matchPage ? matchPage  : 1;
     // get articlepage
-    const articlePage = this.divideToPages(articles)[currentPage - 1];
+    const articlePage = this.divideToPages(articles, 3)[currentPage - 1];
     const articleSummaryList = articlePage && articlePage.map(article => {
       return (
         <ArticleSummary article={article} key={article.id}/>
