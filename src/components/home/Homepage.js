@@ -22,22 +22,32 @@ class HomePage extends Component {
 
   render() {
     const { notifications, articles} = this.props;
-    const articlePages = articles && this.divideToPages(articles, 3).length;
-    // get params
-    const matchPage = parseInt(this.props.match.params.page);
-    // route "/" rener page 1
-    const currentPage = matchPage ? matchPage  : 1;
-    // get articlepage
-    const articlePage = this.divideToPages(articles, 3)[currentPage - 1];
-    const articleSummaryList = articlePage && articlePage.map(article => {
-      return (
-        <ArticleSummary article={article} key={article.id}/>
-      )
-    })
+    let articleSummaryList;
+    let numberOfArticlePages;
+    let currentPage;
+    // if article is not empty
+    if (articles) {
+      // create article pages
+      const articlePages = this.divideToPages(articles, 2);
+      // get number of article pages
+      numberOfArticlePages = articlePages.length;
+      // get params
+      const matchPage = parseInt(this.props.match.params.page);
+      // route "/" rener page 1
+      currentPage = matchPage ? matchPage  : 1;
+      // get articlepage
+      const articlePage = articlePages[currentPage - 1];
+      // create article summary list
+      articleSummaryList = articlePage.map(article => {
+        return (
+          <ArticleSummary article={article} key={article.id}/>
+        )
+      })
+    }
 
     return (notifications && articles) ?
     (
-      <div className="homepage pb-5 pt-5">
+      <div className="homepage pb-5">
         <div className="container mt-5">
           <div className="row">
             <div className="col-12 col-md-4 container">
@@ -46,7 +56,7 @@ class HomePage extends Component {
             </div>
             <div className="col-12 col-md-7">
               {articleSummaryList}
-              <Pagination numberOfPages={articlePages} currentPage={currentPage}/>
+              {<Pagination numberOfPages={numberOfArticlePages} currentPage={currentPage}/>}
             </div>
           </div>
         </div>
@@ -70,7 +80,7 @@ const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
     notifications: state.firestore.ordered.notifications,
-    articles: state.firestore.ordered.articles
+    articles: state.firestore.data.articles && state.firestore.ordered.articles
   }
 }
 
