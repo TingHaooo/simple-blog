@@ -20,7 +20,6 @@ class Article extends React.Component{
   }
 
   componentDidMount () {
-    console.log('hi');
     const { fetchComment } = this.props;
     const articleId = this.props.match.params.id;
     fetchComment(articleId);

@@ -3,7 +3,6 @@ import CommentSection from './CommentSection'
 
 const CommentSectionList = (props) => {
   const { comments, articleId } = props;
-  console.log(comments);
   const commentSectionList = comments && comments.map(comment => {
     return (
       <CommentSection articleId={articleId} comment={comment} key={comment.id}/>
