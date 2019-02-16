@@ -25,9 +25,11 @@ class ArticleSummary extends Component {
         <div className="post-summary mt-3 container">
           <Link to={`/article/${article.id}`}>
             <div className="card bg-white border">
-              <div className="summary-img position-relative">
-                {imgOnLoad || <img src={placeholder} alt="" className="img-fluid" />}
-                <img src={article.img} alt="" className="img-fluid" onLoad={this.loadImage}/>
+              <div className="summary-img position-relative d-block">
+                <img src={placeholder} alt="" className="img-fluid" />
+                <div className="position-absolute" style={{top: 0, left: 0}}>
+                  <img src={article.img} alt="" className="img-fluid" onLoad={this.loadImage}/>
+                </div>
               </div>
               <div className="card-body">
                 <p className="date text-black-50">{moment(article.createAt.toDate()).format('llll')}</p>
