@@ -15,7 +15,8 @@ The blog features including making comment, authentication, notification and pos
 * Quick Search Sidebar
   * Articles searching
   * Classify articles by tags
-* Comment and Reply supporting markdown language
+* Comment and Reply supporting markdown languagef
+* Third part authentication
 
 #### Using
 
