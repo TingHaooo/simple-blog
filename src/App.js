@@ -15,14 +15,16 @@ class App extends Component {
         <ScrollToTop>
           <div className="app">
             <Navbar />
-            <Switch>
+            <div className="pt-5 mt-5 page-container">
+              <Switch>
               <Route exact path="/" component={Homepage}></Route>
               <Route exact path="/homepage/:page" component={Homepage}></Route>
               <Route exact path="/create-article" component={CreateArticle}></Route>
               <Route exact path="/signup" component={SignUp}></Route>
               <Route exact path="/signin" component={SignIn}></Route>
               <Route path="/article/:id" component={Article}></Route>
-            </Switch>
+              </Switch>
+            </div>
           </div>
         </ScrollToTop>
       </BrowserRouter>
